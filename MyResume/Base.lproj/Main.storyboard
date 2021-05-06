@@ -50,9 +50,6 @@
                                 <rect key="frame" x="230" y="693" width="81" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Experience"/>
-                                <connections>
-                                    <segue destination="fZL-zQ-APM" kind="show" id="V55-ir-e7X"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKa-5i-yP8">
                                 <rect key="frame" x="154.66666666666666" y="571" width="81" height="42"/>
