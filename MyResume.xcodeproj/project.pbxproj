@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8219A9162644A87D0011F3C3 /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8219A9152644A87D0011F3C3 /* ResumeViewController.swift */; };
 		EB83AA892642E2FC0094D897 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83AA882642E2FC0094D897 /* AppDelegate.swift */; };
 		EB83AA8B2642E2FC0094D897 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83AA8A2642E2FC0094D897 /* SceneDelegate.swift */; };
 		EB83AA8D2642E2FC0094D897 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83AA8C2642E2FC0094D897 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8219A9152644A87D0011F3C3 /* ResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeViewController.swift; sourceTree = "<group>"; };
 		EB83AA852642E2FC0094D897 /* MyResume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyResume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB83AA882642E2FC0094D897 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB83AA8A2642E2FC0094D897 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				EB83AA882642E2FC0094D897 /* AppDelegate.swift */,
 				EB83AA8A2642E2FC0094D897 /* SceneDelegate.swift */,
 				EB83AA8C2642E2FC0094D897 /* ViewController.swift */,
+				8219A9152644A87D0011F3C3 /* ResumeViewController.swift */,
 				EB83AA8E2642E2FC0094D897 /* Main.storyboard */,
 				EB83AA912642E2FD0094D897 /* Assets.xcassets */,
 				EB83AA932642E2FD0094D897 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB83AA8D2642E2FC0094D897 /* ViewController.swift in Sources */,
+				8219A9162644A87D0011F3C3 /* ResumeViewController.swift in Sources */,
 				EB83AA892642E2FC0094D897 /* AppDelegate.swift in Sources */,
 				EB83AA8B2642E2FC0094D897 /* SceneDelegate.swift in Sources */,
 			);

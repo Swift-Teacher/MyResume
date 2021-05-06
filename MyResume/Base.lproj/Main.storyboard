@@ -50,6 +50,9 @@
                                 <rect key="frame" x="230" y="693" width="81" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Experience"/>
+                                <connections>
+                                    <segue destination="glN-PV-UdR" kind="show" id="AMg-qX-DlI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKa-5i-yP8">
                                 <rect key="frame" x="154.66666666666666" y="571" width="81" height="42"/>
@@ -181,6 +184,22 @@ Creator and producer of the Swift Teacher Podcast</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHK-Ld-YaT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33.644859813084111" y="114.03887688984882"/>
+        </scene>
+        <!--Resume View Controller-->
+        <scene sceneID="xYw-gu-MTY">
+            <objects>
+                <viewController id="glN-PV-UdR" customClass="ResumeViewController" customModule="MyResume" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tea-hO-kvC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XLj-Mt-vIR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dgO-2l-26f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2NR-kd-eIC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2745" y="526"/>
         </scene>
     </scenes>
     <resources>
