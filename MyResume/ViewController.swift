@@ -12,7 +12,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     // MARK: - Instance Properties
     
     // #24
-    let phoneNumber = "3305555555"
+    let phoneNumber = "3308470503"
     
     override func viewDidLoad() {
         super.viewDidLoad()

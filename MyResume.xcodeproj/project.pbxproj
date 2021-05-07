@@ -14,6 +14,7 @@
 		EB83AA902642E2FC0094D897 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB83AA8E2642E2FC0094D897 /* Main.storyboard */; };
 		EB83AA922642E2FD0094D897 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB83AA912642E2FD0094D897 /* Assets.xcassets */; };
 		EB83AA952642E2FD0094D897 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB83AA932642E2FD0094D897 /* LaunchScreen.storyboard */; };
+		EBD7810726457D24009C3207 /* MyResume_project_example.pdf in Resources */ = {isa = PBXBuildFile; fileRef = EBD7810626457D24009C3207 /* MyResume_project_example.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		EB83AA942642E2FD0094D897 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB83AA962642E2FD0094D897 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB83AA9C2642E3180094D897 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EBD7810626457D24009C3207 /* MyResume_project_example.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = MyResume_project_example.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				8219A9152644A87D0011F3C3 /* ResumeViewController.swift */,
 				EB83AA8E2642E2FC0094D897 /* Main.storyboard */,
 				EB83AA912642E2FD0094D897 /* Assets.xcassets */,
+				EBD7810626457D24009C3207 /* MyResume_project_example.pdf */,
 				EB83AA932642E2FD0094D897 /* LaunchScreen.storyboard */,
 				EB83AA962642E2FD0094D897 /* Info.plist */,
 			);
@@ -129,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD7810726457D24009C3207 /* MyResume_project_example.pdf in Resources */,
 				EB83AA952642E2FD0094D897 /* LaunchScreen.storyboard in Resources */,
 				EB83AA922642E2FD0094D897 /* Assets.xcassets in Resources */,
 				EB83AA902642E2FC0094D897 /* Main.storyboard in Resources */,
