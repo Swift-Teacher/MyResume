@@ -24,7 +24,7 @@ class ResumeViewController: UIViewController {
         
         // #31.19
         // Adds a title to the navigation bar. We will set the large title to false so that the title is not jarring and does not take away from the presentation of your resume.
-        title = "Enter your name here"
+        title = "Your Name"
         navigationController?.navigationBar.prefersLargeTitles = false
         
         // #31.18
