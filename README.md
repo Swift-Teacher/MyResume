@@ -137,17 +137,18 @@ In this part of the project we build the app.
     import PDFKit
     ```
 34. Switch to ResumeViewController.swift. At the top of the class create a constant called resume and use this code to assign the value to your resume that you dragged into Navigator Pane earlier (be sure to use code completion in Xcode to avoid typos):
+
         ```swift
-        
         let resume = Bundle.main.url(forResource: "MyResume_project_example", withExtension: "pdf")
         ```
 35. Add this code to the `viewDidLoad()` just under `super.ViewDidLoad()`:
+
         ```swift
-        
         // creates a PDFview that uses the PDFView class to gain access to all of the PDFKit framework functionality.
         let pdfView = PDFView()
         ```
 36.  Add this code to the bottom of `viewDidLoad()`:
+
         ```swift
         // needs to be false or pdf may not show in the view
         pdfView.translatesAutoresizingMaskIntoConstraints = false
@@ -161,8 +162,8 @@ In this part of the project we build the app.
         pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         ```
 37. Add this code to the bottom of `viewDidLoad()`:
+
         ```swift
-        
         // Unwraps an this optional value and if it finds nil inside it exits.
         guard let path = Bundle.main.url(forResource: "MyResume_project_example", withExtension: "pdf") else { return }
         
@@ -177,9 +178,8 @@ In this part of the project we build the app.
     @objc func shareTapped()
     ```
 39. Add this code to the ``shareButtonTapped()` function:
+
         ```swift
-        
-        // #39
         // Unwraps the resume doc (just in case there is no document to be loaded) and if there is no document it will exit
         guard let document = resume else { return }
         // Creates a message to be shared with your resume
@@ -192,8 +192,8 @@ In this part of the project we build the app.
         present(view, animated: true)
         ```
 40. Now that we have created the function that will give the share button its functionality. We will create the share button in code. Add this code towards the top of the `viewDidLoad()` right under the `pdfView` constant:
+
         ```swift
-        
         // Adds the share button
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
         ```
