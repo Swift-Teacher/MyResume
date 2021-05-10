@@ -176,7 +176,7 @@ In this part of the project we build the app.
     ```swift
     @objc func shareTapped()
     ```
-39. Add this code to the ``shareButtonTapped()` function:
+39. Add this code to the `shareButtonTapped()` function:
 ```swift
         // Unwraps the resume doc (just in case there is no document to be loaded) and if there is no document it will exit
         guard let document = resume else { return }
