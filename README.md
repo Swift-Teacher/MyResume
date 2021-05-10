@@ -65,7 +65,14 @@ In this part of the project we build the app.
 22. Create an action from the Call Me button by control-dragging from the Call Me button to just under the viewDidLoad method. Name the function something similar to callMe or callMyName (where MyName is your name).
 23. Create a phoneNumber constant at the top of the class and set it as a String to your phone number.
 24. Add this code to the callMe method.
-    *See screenshot in pdf file*
+’’’
+// this line of code enables a physical device to call our phone number so the person can leave us a voicemail
+if let url = NSURL(string: “tel://(phoneNumber)”) {
+UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+// this line of code demonstrates that the call button will work and actually call the number. This is inserted to demo functionality
+// since the Simulator cannot make a phone call. This line will print a string to the console.
+print(“The phone is calling my number. Voicemail will be triggered automatically.”)
+’’’
 25. How can we make it better?
     1. Have the Skills  button display our personal webpage, blog, portfolio, etc.
     2. Have the Experience page display our actual resume.
