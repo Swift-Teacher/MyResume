@@ -5,13 +5,14 @@
 //  Created by Brian Foutty on 5/5/21.
 //
 
+// #26.3
 import SafariServices
 import UIKit
 
 class ViewController: UIViewController, SFSafariViewControllerDelegate {
     // MARK: - Instance Properties
     
-    // #24
+    // #23
     let phoneNumber = "3308470503"
     
     override func viewDidLoad() {
@@ -40,8 +41,10 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     
     
     // MARK: - Instance methods
+    //#28
     // opens a Safari View Controller to specified web page - should be students website, blog, or portfolio
     func showWebPage() {
+        // #28.1
         // students web page, blog, portfolio entered as a string below
         let urlString = "https://www.swiftteacher.org"
 

@@ -62,75 +62,149 @@ In this part of the project we build the app.
 19. Build and run. You can now navigate to the Experience and Skills screens and then return back to the app Home Screen.
 20. Open Main.storyboard. We now want to create an action that will allow the phone to call our number.
 21. Open the Assistant Editor.
-22. Create an action from the Call Me button by control-dragging from the Call Me button to just under the viewDidLoad method. Name the function something similar to callMe or callMyName (where MyName is your name).
-23. Create a phoneNumber constant at the top of the class and set it as a String to your phone number.
+22. Create an action from the Call Me button by control-dragging from the Call Me button to just under the `viewDidLoad` method. Name the function something similar to `callMe` or `callMyName` (where MyName is your name).
+23. Create a `phoneNumber` constant at the top of the class and set it as a String to your phone number.
 24. Add this code to the callMe method.
-’’’
-// this line of code enables a physical device to call our phone number so the person can leave us a voicemail
-if let url = NSURL(string: “tel://(phoneNumber)”) {
-UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
-// this line of code demonstrates that the call button will work and actually call the number. This is inserted to demo functionality
-// since the Simulator cannot make a phone call. This line will print a string to the console.
-print(“The phone is calling my number. Voicemail will be triggered automatically.”)
-’’’
+    ```swift
+    // this line of code enables a physical device to call our phone number so the person can leave us a voicemail
+    if let url = NSURL(string: "tel://\(phoneNumber)") {
+    UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+    // this line of code demonstrates that the call button will work and actually call the number. This is inserted to demo functionality
+    // since the Simulator cannot make a phone call. This line will print a string to the console.
+    print("The phone is calling my number. Voicemail will be triggered automatically.")
+    ```
 25. How can we make it better?
     1. Have the Skills  button display our personal webpage, blog, portfolio, etc.
     2. Have the Experience page display our actual resume.
 26. Displaying our webpage, blog, or portfolio
     1. Go to the Source Control Navigator and add a new branch and name it “webportfolio”
     2. Break the connection from the Skills button to the Skills screen by clicking on the segue that connects the Home Screen to the Skills screen and then delete that arrow.
-    3. At the very top of ViewController.swift file above the import UIKit statement, add this statement: import SafariServices.
-    4. At the top of ViewController class right after the UIViewController declaration add this: SFSafariViewControllerDelegate.
-    5. Create a new function called showWebPage()
-    6. Add this code to the showWebPage function
-        *See screenshot in pdf file*
-    7. Open Main.storyboard
-    8. Open the Assistant Editor
-    9. Connect the skills button to an action to open the webpage by control-dragging from the Skills button to under the callMyName function which is under the viewDidLoad method. Name the action skillsButtonTapped.
-    10 . Call showWebPage inside of skillsButtonTapped.
-27. Build and run. Tap the Skills button to verify that the correct webpage loads. 
-28. If everything works as expected:
+    3. At the very top of ViewController.swift file above the import UIKit statement, add this statement: 
+    ```swift
+    import SafariServices
+    ```
+27. At the top of ViewController class right after the UIViewController declaration add this: 
+    ```swift
+    SFSafariViewControllerDelegate
+    ```
+28. Create a new function called showWebPage()
+    1. Add this code to the showWebPage function
+        ```swift
+        // students web page, blog, portfolio entered as a string below
+        let urlString = "https://www.swiftteacher.org"
+        
+        if let url = URL(string: urlString) {
+        let config = SFSafariViewController.Configuration()
+        config.entersReaderIfAvailable = true
+        
+        let view = SFSafariViewController(url: url, configuration: config)
+        view.delegate = self
+        present(view, animated: true)
+        }
+        ```
+29. Open Main.storyboard
+    1. Open the Assistant Editor
+    2. Connect the skills button to an action to open the webpage by control-dragging from the Skills button to under the `callMyName` function which is under the `viewDidLoad()` method. Name the action `skillsButtonTapped`.
+    3. Call 
+    ```
+    showWebPage()
+    ```
+    inside of 
+    ```swift
+    @IBAction func skillsButtonTapped(_ sender: Any)
+    ```
+30. Build and run. Tap the Skills button to verify that the correct webpage loads. 
+31. If everything works as expected:
     1. Commit the changes and create the remote branch in the process.
     2. Right-click the “Main” branch and click the “Checkout” button. 
     3. Right-click on the “webportfolio”  branch and choose “Merge “webportfolio” into “main””. Then click the “Merge” button.
     4. In the Menu bar, click Source Control > Push. This will send the changes just merged into the main branch to the main branch on GitHub or your chosen repository hosting service.
-29. How can we make it better?
+32. How can we make it better?
     1. Have the Education button load a pdf version resume we previously made in the Activate lesson.
     2. Add the share button to the pdf so that any prospective employer can email or message the resume to themselves.
-30. Loading a PDF Resume from the apps internal storage and add the share button
+33. Loading a PDF Resume from the apps internal storage and add the share button
     1. Go to the Source Control Navigator and add a new branch and name it “resume”
     2. Export your resume from Pages as a PDF.
     3. Add your resume to your project by dragging it into Project Navigator under the assets.xcassets folder. “Copy files if needed” and “Folder references” must be selected as show below.
-        *See screenshot in pdf file*
+        *See screenshot in pdf file.*
     4. Break the connection from the Experience button to the Experience screen by clicking on the segue that connects the Home Screen to the Experience screen and then delete that arrow.
     5. From the Object Library add a View Controller in Main Storyboard. 
     6. Create a Show segue from the Experience button to the new View Controller.
     7. Add a new Cocoa Touch Class file to your project. File > New > File > Cocoa Touch Class and click “Next”. Set your new file to be a subclass of UIViewController and name your file ResumeViewController and click “Create”.
     8. Switch back to Main.storyboard. Select your newest View Controller. Click the Identity Inspector in the Inspector Pane. In the top section, Custom Class, start typing Resume and then hit return once autocomplete fills in the name ResumeViewController (you will probably only have to type “Re” and then you will see ResumeViewController in the box. Hit return.
-    9. At the very top of ResumeViewController.swift file above the import UIKit statement, add this statement: import PDFKit.
-    10. Switch to ResumeViewController.swift. At the top of the class create a constant called resume and use this code to assign the value to your resume that you dragged into Navigator Pane earlier:
-        *See screenshot in pdf file*
-    11. Add this code to the viewDidLoad just under super.ViewDidLoad():
-        *See screenshot in pdf file*
-    12.  Add this code to the bottom of viewDidLoad:
-        *See screenshot in pdf file*
-    13. Add this code to the bottom of viewDidLoad:
-        *See screenshot in pdf file*
-    14. Build and run. Tap the Experience button to ensure that your resume loads and is viewable.
-    15. We are going to add the share button programmatically. To do this programmatically we are going to use Objective-C functions. In Swift we can do this by bridging to Objective-C and using the @objc keyword before the func keyword. Create an Objective-C Swift function called shareTapped() by using this code: @objc func shareTapped().
-    16. Add this code to the shareButtonTapped() function:
-        *See screenshot in pdf file*
-    17. Now that we have created the function that will give the share button its functionality. We will create the share button in code. Add this code towards the top of the viewDidLoadI() right under the pdfView constant:
-        *See screenshot in pdf file*
-    18. One last finishing touch. We can programmatically add a title to the Navigation Bar so that reinforces who we are so that our name resonates with the interviewer.
-31. Build and run. Build and run. Tap the Experience button, ensure your resume loads, tap the share button to determine the share button functions as it should.
-32. If you are happy with the updated version of the Skills screen:
+    9. At the very top of ResumeViewController.swift file above the import UIKit statement, add this statement: 
+    ```swift
+    import PDFKit
+    ```
+34. Switch to ResumeViewController.swift. At the top of the class create a constant called resume and use this code to assign the value to your resume that you dragged into Navigator Pane earlier (be sure to use code completion in Xcode to avoid typos):
+        ```swift
+        let resume = Bundle.main.url(forResource: "MyResume_project_example", withExtension: "pdf")
+        ```
+35. Add this code to the viewDidLoad just under `super.ViewDidLoad()`:
+        ```swift
+        /// creates a PDFview that uses the PDFView class to gain access to all of the PDFKit framework functionality.
+        let pdfView = PDFView()
+        ```
+36.  Add this code to the bottom of `viewDidLoad()`:
+        ```swift
+        // needs to be false or pdf may not show in the view
+        pdfView.translatesAutoresizingMaskIntoConstraints = false
+        // adds the pdfView to your view
+        view.addSubview(pdfView)
+        
+        // sets the constraints for your pdfView
+        pdfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        pdfView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        ```
+37. Add this code to the bottom of `viewDidLoad()`:
+        ```swift
+        // Unwraps an this optional value and if it finds nil inside it exits.
+        guard let path = Bundle.main.url(forResource: "MyResume_project_example", withExtension: "pdf") else { return }
+        
+        // Unwraps an this optional value. If there is a value our document will load, if nil it will fail.
+        if let document = PDFDocument(url: path) {
+        pdfView.document = document
+        }
+        ```
+38. Build and run. Tap the Experience button to ensure that your resume loads and is viewable.
+    15. We are going to add the share button programmatically. To do this programmatically we are going to use Objective-C functions. In Swift we can do this by bridging to Objective-C and using the @objc keyword before the func keyword. Create an Objective-C Swift function called `shareTapped()` by using this code: 
+    ```swift
+    @objc func shareTapped()
+    ```
+39. Add this code to the ``shareButtonTapped()` function:
+        ```swift
+        // #39
+        // Unwraps the resume doc (just in case there is no document to be loaded) and if there is no document it will exit
+        guard let document = resume else { return }
+        // Creates a message to be shared with your resume
+        let message = "This is Brian Foutty's resume. It looks great. Doesn't it make you want to offer him the job."
+        // Creates the share view that shares the loads the array of items to be shared - in this case your resume and your message for the interviewer.
+        let view = UIActivityViewController(activityItems: [document, message], applicationActivities: [])
+        // Shows the view as a popover from a rightBarButtonItem
+        view.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        // presents the view when the share button is tapped
+        present(view, animated: true)
+        ```
+40. Now that we have created the function that will give the share button its functionality. We will create the share button in code. Add this code towards the top of the `viewDidLoad()` right under the `pdfView` constant:
+        ```swift
+        // Adds the share button
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        ```
+41. One last finishing touch. We can programmatically add a title to the Navigation Bar so that reinforces who we are so that our name resonates with the interviewer:
+    ```swift
+    // Adds a title to the navigation bar. We will set the large title to false so that the title is not jarring and does not take away from the presentation of your resume.
+    title = "Your Name"
+    navigationController?.navigationBar.prefersLargeTitles = false
+    ```
+42. Build and run. Tap the Experience button, ensure your resume loads, tap the share button to determine the share button functions as it should.
+43. If you are happy with the updated version of the Skills screen:
     1. Commit the changes to the resume branch
     2. Right-click the “Main” branch and choose “Checkout”. Click the “Checkout” button.
     3. Right-click on the “resume”  branch and choose “Merge “resume” into “main””. Then click the “Merge” button.
     4. In the Menu bar, click Source Control > Push. This will send the changes just merged into the main branch to the main branch on GitHub or your chosen repository hosting service.
-33. This updated version of the app is now complete. Congratulations!!
+44. This updated version of the app is now complete. Congratulations!!
 
 
 You can find a write up of my process, sample materials, and screencasts of the process I used at my blog: [Swift Teacher Blog](https://www.swiftteacher.org/swift-teacher/2021/4/20/lizard-spock-addition-conundrum).
-
