@@ -203,7 +203,7 @@ Creator and producer of the Swift Teacher Podcast</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Memojimac" width="342" height="342"/>
+        <image name="Memojimac" width="341.33334350585938" height="341.33334350585938"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

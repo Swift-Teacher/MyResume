@@ -20,9 +20,9 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     }
     
     // MARK: - IB Actions
-    // #23
+    // #22
     @IBAction func callMe(_ sender: Any) {
-            // #25 - all code and comments in this code block
+            // #24 - all code and comments in this code block
             // this line of code enables a physical device to call our phone number so the person can leave us a voicemail
             if let url = NSURL(string: "tel://\(phoneNumber)") {
                 UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
@@ -32,9 +32,9 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
             }
         }
     
-    // #27.10
+    // #26.9
     @IBAction func skillsButtonTapped(_ sender: Any) {
-        // #27.11
+        // #26.10
         showWebPage()
     }
     
