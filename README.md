@@ -64,7 +64,7 @@ In this part of the project we build the app.
 21. Open the Assistant Editor.
 22. Create an action from the Call Me button by control-dragging from the Call Me button to just under the `viewDidLoad` method. Name the function something similar to `callMe` or `callMyName` (where MyName is your name).
 23. Create a `phoneNumber` constant at the top of the class and set it as a String to your phone number.
-24. Add this code to the callMe method.
+24. Add this code to the `callMe` method.
     ```swift
     // this line of code enables a physical device to call our phone number so the person can leave us a voicemail
     if let url = NSURL(string: "tel://\(phoneNumber)") {
@@ -138,11 +138,13 @@ In this part of the project we build the app.
     ```
 34. Switch to ResumeViewController.swift. At the top of the class create a constant called resume and use this code to assign the value to your resume that you dragged into Navigator Pane earlier (be sure to use code completion in Xcode to avoid typos):
         ```swift
+        
         let resume = Bundle.main.url(forResource: "MyResume_project_example", withExtension: "pdf")
         ```
-35. Add this code to the viewDidLoad just under `super.ViewDidLoad()`:
+35. Add this code to the `viewDidLoad()` just under `super.ViewDidLoad()`:
         ```swift
-        /// creates a PDFview that uses the PDFView class to gain access to all of the PDFKit framework functionality.
+        
+        // creates a PDFview that uses the PDFView class to gain access to all of the PDFKit framework functionality.
         let pdfView = PDFView()
         ```
 36.  Add this code to the bottom of `viewDidLoad()`:
@@ -160,6 +162,7 @@ In this part of the project we build the app.
         ```
 37. Add this code to the bottom of `viewDidLoad()`:
         ```swift
+        
         // Unwraps an this optional value and if it finds nil inside it exits.
         guard let path = Bundle.main.url(forResource: "MyResume_project_example", withExtension: "pdf") else { return }
         
@@ -175,6 +178,7 @@ In this part of the project we build the app.
     ```
 39. Add this code to the ``shareButtonTapped()` function:
         ```swift
+        
         // #39
         // Unwraps the resume doc (just in case there is no document to be loaded) and if there is no document it will exit
         guard let document = resume else { return }
@@ -189,6 +193,7 @@ In this part of the project we build the app.
         ```
 40. Now that we have created the function that will give the share button its functionality. We will create the share button in code. Add this code towards the top of the `viewDidLoad()` right under the `pdfView` constant:
         ```swift
+        
         // Adds the share button
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
         ```
@@ -208,3 +213,4 @@ In this part of the project we build the app.
 
 
 You can find a write up of my process, sample materials, and screencasts of the process I used at my blog: [Swift Teacher Blog](https://www.swiftteacher.org/swift-teacher/2021/4/20/lizard-spock-addition-conundrum).
+
