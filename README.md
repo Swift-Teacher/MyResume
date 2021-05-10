@@ -210,5 +210,5 @@ In this part of the project we build the app.
 44. This updated version of the app is now complete. Congratulations!!
 
 
-You can find a write up of my process, sample materials, and screencasts of the process I used at my blog: [Swift Teacher Blog](https://www.swiftteacher.org/swift-teacher/2021/4/20/lizard-spock-addition-conundrum).
+You can find a write up of my process, sample materials, and screencasts of the process I used at my blog: [Swift Teacher Blog](https://www.swiftteacher.org/).
 
