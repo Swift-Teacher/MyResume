@@ -33,9 +33,9 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
             }
         }
     
-    // #26.9
+    // #29.2
     @IBAction func skillsButtonTapped(_ sender: Any) {
-        // #26.10
+        // #29.3
         showWebPage()
     }
     

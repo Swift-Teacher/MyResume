@@ -4,7 +4,7 @@
 //
 //  Created by Brian Foutty on 5/6/21.
 //
-// #33.10
+// #33.9
 import PDFKit
 import UIKit
 
@@ -54,7 +54,7 @@ class ResumeViewController: UIViewController {
         }
     }
     
-    // #31.16
+    // #38
     // An Objective-C function that will be called when the share button is tapped.
     @objc func shareTapped() {
         // #39
