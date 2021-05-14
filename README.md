@@ -128,10 +128,10 @@ In this part of the project we build the app.
     3. Add your resume to your project by dragging it into Project Navigator under the assets.xcassets folder. “Copy files if needed” and “Folder references” must be selected as show below.
         *See screenshot in pdf file.*
     4. Break the connection from the Experience button to the Experience screen by clicking on the segue that connects the Home Screen to the Experience screen and then delete that arrow.
-    5. From the Object Library add a View Controller in Main Storyboard. 
+    5. Open the Object Library add a View Controller in Main Storyboard. 
     6. Create a Show segue from the Experience button to the new View Controller.
     7. Add a new Cocoa Touch Class file to your project. File > New > File > Cocoa Touch Class and click “Next”. Set your new file to be a subclass of UIViewController and name your file ResumeViewController and click “Create”.
-    8. Switch back to Main.storyboard. Select your newest View Controller. Click the Identity Inspector in the Inspector Pane. In the top section, Custom Class, start typing Resume and then hit return once autocomplete fills in the name ResumeViewController (you will probably only have to type “Re” and then you will see ResumeViewController in the box. Hit return.
+    8. Switch back to Main.storyboard. Select your newest View Controller. Click the Identity Inspector in the Inspector Pane. In the top section, Custom Class, start typing Resume and then hit return once autocomplete fills in the name ResumeViewController (you will probably only have to type “Re” and then you will see ResumeViewController in the box.
     9. At the very top of ResumeViewController.swift file above the import UIKit statement, add this statement: 
     ```swift
     import PDFKit
@@ -176,7 +176,7 @@ In this part of the project we build the app.
     ```swift
     @objc func shareTapped()
     ```
-39. Add this code to the `shareButtonTapped()` function:
+39. Add this code to the `shareTapped()` function:
 ```swift
         // Unwraps the resume doc (just in case there is no document to be loaded) and if there is no document it will exit
         guard let document = resume else { return }
@@ -202,12 +202,13 @@ In this part of the project we build the app.
     ```
 42. Build and run. Tap the Experience button, ensure your resume loads, tap the share button to determine the share button functions as it should.
 43. If you are happy with the updated version of the Skills screen:
-    1. Commit the changes to the resume branch
+    1. Commit the changes to the resume branch.
     2. Right-click the “Main” branch and choose “Checkout”. Click the “Checkout” button.
     3. Right-click on the “resume”  branch and choose “Merge “resume” into “main””. Then click the “Merge” button.
     4. In the Menu bar, click Source Control > Push. This will send the changes just merged into the main branch to the main branch on GitHub or your chosen repository hosting service.
 44. This updated version of the app is now complete. Congratulations!!
 
+The repo for the app made in the screencasts can be found here: [Hello app](https://github.com/Swift-Teacher/Hello).
 
 You can find a write up of my process, sample materials, and screencasts of the process I used at my blog: [Swift Teacher Blog](https://www.swiftteacher.org/).
 
