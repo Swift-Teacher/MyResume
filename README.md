@@ -124,7 +124,7 @@ In this part of the project we build the app.
     2. Add the share button to the pdf so that any prospective employer can email or message the resume to themselves.
 33. Loading a PDF Resume from the apps internal storage and add the share button
     1. Go to the Source Control Navigator and add a new branch and name it “resume”
-    2. Export your resume from Pages as a PDF.
+    2. Open Pages and export your resume from Pages as a PDF.
     3. Add your resume to your project by dragging it into Project Navigator under the assets.xcassets folder. “Copy files if needed” and “Folder references” must be selected as show below.
         *See screenshot in pdf file.*
     4. Break the connection from the Experience button to the Experience screen by clicking on the segue that connects the Home Screen to the Experience screen and then delete that arrow.
