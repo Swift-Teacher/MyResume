@@ -28,6 +28,7 @@
 		EB83AA942642E2FD0094D897 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB83AA962642E2FD0094D897 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB83AA9C2642E3180094D897 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EBB287D62652ACA300D96402 /* MyResume Apply.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "MyResume Apply.pdf"; sourceTree = "<group>"; };
 		EBD7810626457D24009C3207 /* MyResume_project_example.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = MyResume_project_example.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +46,7 @@
 		EB83AA7C2642E2FC0094D897 = {
 			isa = PBXGroup;
 			children = (
+				EBB287D62652ACA300D96402 /* MyResume Apply.pdf */,
 				EB83AA9C2642E3180094D897 /* README.md */,
 				EB83AA872642E2FC0094D897 /* MyResume */,
 				EB83AA862642E2FC0094D897 /* Products */,

@@ -210,5 +210,5 @@ In this part of the project we build the app.
 
 The repo for the app made in the screencasts can be found here: [Hello app](https://github.com/Swift-Teacher/Hello).
 
-You can find a write up of my process, sample materials, and screencasts of the process I used at my blog: [Swift Teacher Blog](https://www.swiftteacher.org/).
+You can find a write up of my process, sample materials, and screencasts of the process I used at my blog: [Swift Teacher Blog](https://www.swiftteacher.org/swift-teacher/2021/5/14/employed-is-the-ultimate-e).
 
