@@ -142,7 +142,7 @@ In this part of the project we build the app.
 ```swift
         let resume = Bundle.main.url(forResource: "MyResume_project_example", withExtension: "pdf")
 ```
-35. Add this code to the `viewDidLoad()` just under `super.ViewDidLoad()`:
+35. Add this new property to the Instance Properties section of the code:
 
 ```swift
         // creates a PDFview that uses the PDFView class to gain access to all of the PDFKit framework functionality.
@@ -155,23 +155,27 @@ In this part of the project we build the app.
         pdfView.translatesAutoresizingMaskIntoConstraints = false
         // adds the pdfView to your view
         view.addSubview(pdfView)
-        
-        // sets the constraints for your pdfView
-        pdfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        pdfView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         ```
-37. Add this code to the bottom of `viewDidLoad()`:
 ```swift
         // Unwraps an this optional value and if it finds nil inside it exits.
         guard let path = Bundle.main.url(forResource: "MyResume_project_example", withExtension: "pdf") else { return }
         
-        // Unwraps an this optional value. If there is a value our document will load, if nil it will fail.
-        if let document = PDFDocument(url: path) {
+        // Unwraps this optional value. If there is a value our document will load, if nil the loop exits.
+        guard let document = PDFDocument(url: path) else {return}
+        
         pdfView.document = document
-        }
 ```
+
+37.  Add this code to the bottom of `UIViewController` class:
+
+        ```swift
+    // #37
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        pdfView.frame = view.bounds
+    }
+        ```
+
 38. Build and run. Tap the Experience button to ensure that your resume loads and is viewable. We are going to add the share button programmatically. To do this programmatically we are going to use Objective-C functions. In Swift we can do this by bridging to Objective-C and using the `@objc` keyword before the `func` keyword. Create an Objective-C Swift function called `shareTapped()` by using this code: 
     ```swift
     @objc func shareTapped()
