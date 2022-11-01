@@ -14,13 +14,12 @@ class ResumeViewController: UIViewController {
     // This creates a value for and stores the location of your resume in your app so that we can locate it later for the share button.
     // #34
     let resume = Bundle.main.url(forResource: "MyResume_project_example", withExtension: "pdf")
+    // #35
+    // creates a PDFview that uses the PDFView class to gain access to all of the PDFKit framework functionality.
+    let pdfView = PDFView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // #35
-        // creates a PDFview that uses the PDFView class to gain access to all of the PDFKit framework functionality.
-        let pdfView = PDFView()
         
         // #41
         // Adds a title to the navigation bar. We will set the large title to false so that the title is not jarring and does not take away from the presentation of your resume.
@@ -37,21 +36,24 @@ class ResumeViewController: UIViewController {
         // adds the pdfView to your view
         view.addSubview(pdfView)
 
+        /* This is unnecessary now.
         // also #36
         // sets the constraints for your pdfView
         pdfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         pdfView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true*/
         
-        // #37
+        // #36
         // Unwraps an this optional value and if it finds nil inside it exits.
         guard let path = Bundle.main.url(forResource: "MyResume_project_example", withExtension: "pdf") else { return }
         
         // Unwraps an this optional value. If there is a value our document will load, if nil it will fail.
-        if let document = PDFDocument(url: path) {
-            pdfView.document = document
-        }
+        //if let document = PDFDocument(url: path) {
+        guard let document = PDFDocument(url: path) else {return}
+        
+        pdfView.document = document
+        //}
     }
     
     // #38
@@ -68,5 +70,11 @@ class ResumeViewController: UIViewController {
         view.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         // presents the view when the share button is tapped
         present(view, animated: true)
+    }
+    
+    // #37
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        pdfView.frame = view.bounds
     }
 }
