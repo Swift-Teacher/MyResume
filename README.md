@@ -168,8 +168,8 @@ In this part of the project we build the app.
 
 37.  Add this code to the bottom of `UIViewController` class:
 
-        ```swift
     // #37
+    ```swift
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         pdfView.frame = view.bounds
